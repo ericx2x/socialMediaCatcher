@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mindful YouTube Access</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        a {
+            display: block;
+            margin-top: 20px;
+            font-size: 18px;
+            color: #2980b9;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .hidden {
+            display: none;
+        }
+        .container {
+            margin-top: 20px;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 15px;
+            font-size: 16px;
+            background-color: #2980b9;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #3498db;
+        }
+    </style>
+</head>
+<body>
+    <h1>Mindful YouTube Access</h1>
+    <p>Before you proceed, please reflect:</p>
+    
+    <div class="container">
+        <button id="startButton">Start Reflection</button>
+        <div id="reflection" class="hidden">
+            <h2>Step 1: Reflect on Your Intentions</h2>
+            <p>Are you ready to proceed?</p>
+            <button id="nextStep1">Next</button>
+        </div>
+        
+        <div id="confirmation" class="hidden">
+            <h2>Step 2: Confirm Your Decision</h2>
+            <p>Are you sure you want to access YouTube?</p>
+            <button id="nextStep2">Access Links</button>
+        </div>
+        
+        <div id="final" class="hidden">
+            <h2>Here are your links:</h2>
+            <a href="https://yewtu.be/watch?v=PYYAm7XUo4k">Not During meals, not after 7pm, phone fast every two weeks for a weekend or day</a>
+            <a href="https://www.youtube.com/results?search_query=Healthy+lifestyle+tips">Healthy lifestyle tips</a>
+            <a href="https://www.youtube.com/results?search_query=audiobook">Audiobook with search term</a>
+            <a href="https://www.youtube.com/results?search_query=Mindfulness+prayer+and+meditation">Mindfulness Meditation and Prayer</a>
+            <a href="https://www.youtube.com/results?search_query=overview+guide+course+tutorial+class+workshop+resource+webinar+">Learning with a search term</a>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('startButton').onclick = function() {
+            document.getElementById('reflection').classList.remove('hidden');
+            this.classList.add('hidden');
+        };
+
+        document.getElementById('nextStep1').onclick = function() {
+            document.getElementById('confirmation').classList.remove('hidden');
+            document.getElementById('reflection').classList.add('hidden');
+        };
+
+        document.getElementById('nextStep2').onclick = function() {
+            document.getElementById('final').classList.remove('hidden');
+            document.getElementById('confirmation').classList.add('hidden');
+        };
+    </script>
+</body>
+</html>
